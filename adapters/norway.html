@@ -35,9 +35,8 @@
                 
                 <div class="adapter-type">
                     <h3>Norsk standard (Type F)</h3>
-                    <div class="adapter-image">
-                        <!-- Replace with actual image when available -->
-                        <img src="../images/type-f-adapter.jpg" alt="Type F (Schuko) stikkontakt som brukes i Norge" class="adapter-img">
+                    <div class="adapter-image" id="norway-standard-plug">
+                        <!-- Will be dynamically populated with SVG -->
                     </div>
                     <p>Norge bruker Type F (Schuko) stikkontakter med 230V og 50Hz. Stikkontakten har to runde pinner og jordingskontakter på sidene.</p>
                 </div>
@@ -48,9 +47,8 @@
                 
                 <div class="destination-card">
                     <h4>Storbritannia</h4>
-                    <div class="adapter-image">
-                        <!-- Replace with actual image when available -->
-                        <img src="../images/type-g-adapter.jpg" alt="Type G adapter som brukes i Storbritannia" class="adapter-img">
+                    <div class="adapter-image" id="uk-plug">
+                        <!-- Will be dynamically populated with plug SVG -->
                     </div>
                     <p>For reiser til Storbritannia trenger du en Type G adapter. Denne adapteren har tre rektangulære pinner.</p>
                     <div class="buy-section">
@@ -65,9 +63,8 @@
 
                 <div class="destination-card">
                     <h4>USA og Canada</h4>
-                    <div class="adapter-image">
-                        <!-- Replace with actual image when available -->
-                        <img src="../images/type-a-b-adapter.jpg" alt="Type A/B adapter som brukes i USA og Canada" class="adapter-img">
+                    <div class="adapter-image" id="usa-plug">
+                        <!-- Will be dynamically populated with plug SVG -->
                     </div>
                     <p>For reiser til USA og Canada trenger du en Type A/B adapter. Disse landene bruker 120V, så sjekk at dine elektriske apparater støtter dette.</p>
                     <div class="buy-section">
@@ -85,9 +82,8 @@
 
             <section class="universal-adapter">
                 <h3>Universal reiseadapter</h3>
-                <div class="adapter-image">
-                    <!-- Replace with actual image when available -->
-                    <img src="../images/universal-adapter.jpg" alt="Universal reiseadapter som fungerer i de fleste land" class="adapter-img">
+                <div class="adapter-image" id="universal-plug">
+                    <!-- Will be dynamically populated -->
                 </div>
                 <p>En universal reiseadapter fungerer i de fleste land og er et godt valg hvis du reiser til flere forskjellige destinasjoner.</p>
                 <div class="buy-section">
@@ -117,10 +113,42 @@
     <script src="../js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const plugDisplay = new PlugDisplay();
-            const plugContainer = document.getElementById('norway-plugs');
-            plugContainer.appendChild(plugDisplay.getContainer());
-            plugDisplay.displayPlugsForCountry('norway');
+            // Display Norway standard plug (Type F)
+            const norwayStandardPlugDisplay = new PlugDisplay();
+            const norwayStandardContainer = document.getElementById('norway-standard-plug');
+            norwayStandardContainer.appendChild(norwayStandardPlugDisplay.getContainer());
+            // Create a custom display for just Type F
+            norwayStandardPlugDisplay.plugContainer.innerHTML = `
+                <div class="plug-item">
+                    <div class="plug-svg">
+                        ${norwayStandardPlugDisplay.generatePlugSVG('F')}
+                    </div>
+                </div>
+            `;
+            
+            // Display Norway plugs in the complete list
+            const norwayPlugDisplay = new PlugDisplay();
+            const norwayContainer = document.getElementById('norway-plugs');
+            norwayContainer.appendChild(norwayPlugDisplay.getContainer());
+            norwayPlugDisplay.displayPlugsForCountry('norway');
+            
+            // Display UK plug
+            const ukPlugDisplay = new PlugDisplay();
+            const ukPlugContainer = document.getElementById('uk-plug');
+            ukPlugContainer.appendChild(ukPlugDisplay.getContainer());
+            ukPlugDisplay.displayPlugsForCountry('uk');
+            
+            // Display USA plugs
+            const usaPlugDisplay = new PlugDisplay();
+            const usaPlugContainer = document.getElementById('usa-plug');
+            usaPlugContainer.appendChild(usaPlugDisplay.getContainer());
+            usaPlugDisplay.displayPlugsForCountry('usa');
+            
+            // Display universal adapter
+            const universalPlugDisplay = new PlugDisplay();
+            const universalPlugContainer = document.getElementById('universal-plug');
+            universalPlugContainer.appendChild(universalPlugDisplay.getContainer());
+            universalPlugDisplay.displayUniversalAdapter();
         });
     </script>
 </body>

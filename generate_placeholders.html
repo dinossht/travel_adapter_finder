@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Placeholder Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .canvas-container {
+            margin-bottom: 30px;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        button {
+            display: block;
+            margin-bottom: 5px;
+            padding: 8px 16px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1557b0;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Placeholder Image Generator for Wall Adapters</h1>
+    <p>Click on each button to download the corresponding placeholder image.</p>
+    
+    <div class="canvas-container">
+        <h2>Type F Adapter (Norway)</h2>
+        <canvas id="typeFCanvas" width="400" height="300"></canvas>
+        <button onclick="downloadImage('typeFCanvas', 'type-f-adapter.jpg')">Download Type F Adapter Image</button>
+    </div>
+    
+    <div class="canvas-container">
+        <h2>Type G Adapter (UK)</h2>
+        <canvas id="typeGCanvas" width="400" height="300"></canvas>
+        <button onclick="downloadImage('typeGCanvas', 'type-g-adapter.jpg')">Download Type G Adapter Image</button>
+    </div>
+    
+    <div class="canvas-container">
+        <h2>Type A/B Adapter (US/Canada)</h2>
+        <canvas id="typeABCanvas" width="400" height="300"></canvas>
+        <button onclick="downloadImage('typeABCanvas', 'type-a-b-adapter.jpg')">Download Type A/B Adapter Image</button>
+    </div>
+    
+    <div class="canvas-container">
+        <h2>Universal Adapter</h2>
+        <canvas id="universalCanvas" width="400" height="300"></canvas>
+        <button onclick="downloadImage('universalCanvas', 'universal-adapter.jpg')">Download Universal Adapter Image</button>
+    </div>
+    
+    <script>
+        // Function to draw text centered on canvas
+        function drawPlaceholder(canvasId, text, bgColor) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Fill background
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw text
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Split text into lines if needed
+            const words = text.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+            
+            for (let i = 1; i < words.length; i++) {
+                const testLine = currentLine + ' ' + words[i];
+                const metrics = ctx.measureText(testLine);
+                if (metrics.width < canvas.width - 40) {
+                    currentLine = testLine;
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            
+            // Draw each line
+            const lineHeight = 30;
+            const startY = canvas.height / 2 - (lines.length - 1) * lineHeight / 2;
+            
+            for (let i = 0; i < lines.length; i++) {
+                ctx.fillText(lines[i], canvas.width / 2, startY + i * lineHeight);
+            }
+        }
+        
+        // Function to download canvas as image
+        function downloadImage(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/jpeg', 0.8);
+            link.click();
+        }
+        
+        // Draw all placeholders when page loads
+        window.onload = function() {
+            drawPlaceholder('typeFCanvas', 'Type F Adapter (Norway)', '#1a73e8');
+            drawPlaceholder('typeGCanvas', 'Type G Adapter (UK)', '#34a853');
+            drawPlaceholder('typeABCanvas', 'Type A/B Adapter (US/Canada)', '#fbbc04');
+            drawPlaceholder('universalCanvas', 'Universal Adapter', '#ea4335');
+        };
+    </script>
+</body>
+</html> 

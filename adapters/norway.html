@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiseadaptere for Norge - Reiseadapter Guide</title>
+    <meta name="description" content="Finn riktig reiseadapter for reiser fra Norge til ulike land.">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/plug-types.js"></script>
+    <script src="../js/plug-display.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Reiseadapter Guide</h1>
+            <p class="tagline">Finn riktig adapter for din reise</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Hjem</a></li>
+                <li><a href="norway.html" class="active">Norge</a></li>
+                <!-- More countries will be added here later -->
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="country-info">
+                <h2>Reiseadaptere for Norge</h2>
+                <p>Norge bruker Type F (Schuko) stikkontakter. Her finner du adaptere du trenger når du reiser fra Norge til andre land.</p>
+                
+                <div class="adapter-type">
+                    <h3>Norsk standard (Type F)</h3>
+                    <div class="adapter-image">
+                        <!-- Replace with actual image when available -->
+                        <img src="../images/type-f-adapter.jpg" alt="Type F (Schuko) stikkontakt som brukes i Norge" class="adapter-img">
+                    </div>
+                    <p>Norge bruker Type F (Schuko) stikkontakter med 230V og 50Hz. Stikkontakten har to runde pinner og jordingskontakter på sidene.</p>
+                </div>
+            </section>
+
+            <section class="popular-destinations">
+                <h3>Populære reisemål fra Norge</h3>
+                
+                <div class="destination-card">
+                    <h4>Storbritannia</h4>
+                    <div class="adapter-image">
+                        <!-- Replace with actual image when available -->
+                        <img src="../images/type-g-adapter.jpg" alt="Type G adapter som brukes i Storbritannia" class="adapter-img">
+                    </div>
+                    <p>For reiser til Storbritannia trenger du en Type G adapter. Denne adapteren har tre rektangulære pinner.</p>
+                    <div class="buy-section">
+                        <h5>Kjøp Type G adapter</h5>
+                        <div class="affiliate-links">
+                            <a href="#" class="affiliate-link" target="_blank">Elkjøp</a>
+                            <a href="#" class="affiliate-link" target="_blank">Power</a>
+                            <a href="#" class="affiliate-link" target="_blank">Clas Ohlson</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <h4>USA og Canada</h4>
+                    <div class="adapter-image">
+                        <!-- Replace with actual image when available -->
+                        <img src="../images/type-a-b-adapter.jpg" alt="Type A/B adapter som brukes i USA og Canada" class="adapter-img">
+                    </div>
+                    <p>For reiser til USA og Canada trenger du en Type A/B adapter. Disse landene bruker 120V, så sjekk at dine elektriske apparater støtter dette.</p>
+                    <div class="buy-section">
+                        <h5>Kjøp Type A/B adapter</h5>
+                        <div class="affiliate-links">
+                            <a href="#" class="affiliate-link" target="_blank">Elkjøp</a>
+                            <a href="#" class="affiliate-link" target="_blank">Power</a>
+                            <a href="#" class="affiliate-link" target="_blank">Clas Ohlson</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional destinations can be added here -->
+            </section>
+
+            <section class="universal-adapter">
+                <h3>Universal reiseadapter</h3>
+                <div class="adapter-image">
+                    <!-- Replace with actual image when available -->
+                    <img src="../images/universal-adapter.jpg" alt="Universal reiseadapter som fungerer i de fleste land" class="adapter-img">
+                </div>
+                <p>En universal reiseadapter fungerer i de fleste land og er et godt valg hvis du reiser til flere forskjellige destinasjoner.</p>
+                <div class="buy-section">
+                    <h5>Kjøp universal reiseadapter</h5>
+                    <div class="affiliate-links">
+                        <a href="#" class="affiliate-link" target="_blank">Elkjøp</a>
+                        <a href="#" class="affiliate-link" target="_blank">Power</a>
+                        <a href="#" class="affiliate-link" target="_blank">Clas Ohlson</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="adapter-types">
+                <h2>Støpsler brukt i Norge</h2>
+                <div id="norway-plugs"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Reiseadapter Guide. Alle rettigheter reservert.</p>
+            <p class="disclaimer">Nettstedet inneholder affiliate-lenker. Vi kan motta en liten kommisjon ved kjøp gjennom våre lenker, uten ekstra kostnad for deg.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const plugDisplay = new PlugDisplay();
+            const plugContainer = document.getElementById('norway-plugs');
+            plugContainer.appendChild(plugDisplay.getContainer());
+            plugDisplay.displayPlugsForCountry('norway');
+        });
+    </script>
+</body>
+</html> 

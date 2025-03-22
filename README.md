@@ -1,6 +1,8 @@
-# Norwegian Wall Adapter Helper Website
+# Travel Adapter Finder
 
-This project aims to create a minimal, user-friendly website tailored for older Norwegian users. The site will help users determine the correct wall adapter needed for different countries—with a focus on Norway initially—and include high-quality images as well as affiliate links to local online shops.
+**Visit the live site: [traveladapterfinder.com](https://traveladapterfinder.com)**
+
+This project aims to create a minimal, user-friendly website tailored for older Norwegian users. The site helps users determine the correct travel adapter needed for different countries—with a focus on Norway initially—and includes SVG visualizations of plug types as well as affiliate links to local online shops.
 
 ## Table of Contents
 
@@ -27,10 +29,12 @@ The website will:
 
 ## Technologies Used
 
-- **HTML5:** For the website structure.
-- **CSS3:** For styling and ensuring accessibility (large fonts, high contrast, simple layout).
-- **JavaScript:** For any necessary interactivity (e.g., dynamic content loading or navigation enhancements).
-- **Optional:** A Content Management System (CMS) like WordPress for ease of updates, if preferred later.
+- **HTML5:** For semantic markup and accessible website structure
+- **CSS3:** For responsive styling with a focus on accessibility (large fonts, high contrast, simple layout)
+- **JavaScript (ES6+):** For interactive elements and dynamic SVG generation of plug types
+- **SVG:** For scalable, responsive visualizations of different plug types
+- **GitHub Pages:** For hosting with a custom domain
+- **Modular Code Structure:** Separate files for plug types, display logic, and core functionality
 
 ## Setup Instructions
 
@@ -59,15 +63,18 @@ Organize your files as follows:
 
 ```
 travel_adapter_finder/
-├── index.html
+├── CNAME               # Domain configuration (traveladapterfinder.com)
+├── index.html          # Main homepage
 ├── adapters/
-│   └── norway.html
+│   └── norway.html     # Norway-specific adapter information
 ├── css/
-│   └── style.css
+│   └── style.css       # Global styles
 ├── js/
-│   └── main.js
+│   ├── main.js         # Core functionality
+│   ├── plug-types.js   # Plug type definitions and mappings
+│   └── plug-display.js # SVG generation and display logic
 └── images/
-    └── [adapter images...]
+    └── [adapter images for fallback]
 ```
 
 ### HTML Development
@@ -113,11 +120,14 @@ travel_adapter_finder/
    - Validate HTML and CSS using online validators (e.g., W3C Validator).
 
 2. **Deployment:**  
-   - Choose a hosting platform. Options include:
-     - **GitHub Pages:** For a free static site.
-     - **Netlify:** For easy continuous deployment.
-     - **Traditional hosting providers:** If more control is needed.
-   - Follow the chosen platform's deployment guide to push your site live.
+   - The site is deployed using GitHub Pages at [traveladapterfinder.com](https://traveladapterfinder.com)
+   - A custom domain is configured using a CNAME record
+   - All changes pushed to the main branch are automatically deployed
+   - For local testing, use a simple HTTP server:
+     ```bash
+     python -m http.server
+     # Then visit http://localhost:8000
+     ```
 
 ## Maintenance and Future Enhancements
 

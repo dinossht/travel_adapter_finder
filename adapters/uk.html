@@ -106,11 +106,6 @@
                     </div>
                 </div>
             </section>
-
-            <section class="adapter-types">
-                <h2>Plug Types Used in the UK</h2>
-                <div id="uk-plugs"></div>
-            </section>
         </div>
     </main>
 
@@ -135,12 +130,6 @@
                     </div>
                 </div>
             `;
-            
-            // Display UK plugs in the complete list
-            const ukPlugDisplay = new PlugDisplay();
-            const ukContainer = document.getElementById('uk-plugs');
-            ukContainer.appendChild(ukPlugDisplay.getContainer());
-            ukPlugDisplay.displayPlugsForCountry('uk');
             
             // Display USA plugs
             const usaPlugDisplay = new PlugDisplay();

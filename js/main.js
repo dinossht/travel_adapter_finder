@@ -30,6 +30,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Initialize universal adapter in featured section if it exists
+    const universalFeaturedPlug = document.getElementById('universal-featured-plug');
+    if (universalFeaturedPlug && typeof PlugDisplay !== 'undefined') {
+        const universalPlugDisplay = new PlugDisplay();
+        universalFeaturedPlug.appendChild(universalPlugDisplay.getContainer());
+        universalPlugDisplay.displayUniversalAdapter();
+    }
+    
     // Log info for debugging
-    console.log('Wall Adapter Helper Website JS loaded successfully');
+    console.log('Travel Adapter Finder Website JS loaded successfully');
 }); 

@@ -330,4 +330,41 @@ footer p {
     text-align: center;
     font-weight: bold;
     color: var(--text-color);
+}
+
+/* Featured Product Styles */
+.featured-product {
+    background-color: #f5f7fa;
+}
+
+.featured-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.featured-image {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.featured-description {
+    flex: 2;
+    min-width: 300px;
+}
+
+.featured-buy {
+    margin-top: 20px;
+}
+
+.featured-buy .button {
+    background-color: #f90;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+}
+
+.featured-buy .button:hover {
+    background-color: #e68a00;
 } 

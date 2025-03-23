@@ -75,22 +75,6 @@
                 <h3>Popular Destinations from the UK</h3>
                 
                 <div class="destination-card">
-                    <h4>European Union</h4>
-                    <div class="adapter-image" id="eu-plug">
-                        <!-- Will be dynamically populated with plug SVG -->
-                    </div>
-                    <p>For travels to EU countries, you'll need a Type C or Type F adapter. These adapters have two round pins.</p>
-                    <div class="buy-section">
-                        <h5>Buy Type C/F adapter</h5>
-                        <div class="affiliate-links">
-                            <a href="https://www.amazon.co.uk/s?k=eu+travel+adapter&tag=traveladapter-21" class="affiliate-link" target="_blank">Amazon</a>
-                            <a href="https://www.argos.co.uk/browse/electrical/power-and-batteries/travel-adaptors/c:30251/" class="affiliate-link" target="_blank">Argos</a>
-                            <a href="https://www.currys.co.uk/search?q=travel+adapter" class="affiliate-link" target="_blank">Currys</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="destination-card">
                     <h4>USA and Canada</h4>
                     <div class="adapter-image" id="usa-plug">
                         <!-- Will be dynamically populated with plug SVG -->
@@ -157,12 +141,6 @@
             const ukContainer = document.getElementById('uk-plugs');
             ukContainer.appendChild(ukPlugDisplay.getContainer());
             ukPlugDisplay.displayPlugsForCountry('uk');
-            
-            // Display EU plug
-            const euPlugDisplay = new PlugDisplay();
-            const euPlugContainer = document.getElementById('eu-plug');
-            euPlugContainer.appendChild(euPlugDisplay.getContainer());
-            euPlugDisplay.displayPlugsForCountry('eu');
             
             // Display USA plugs
             const usaPlugDisplay = new PlugDisplay();

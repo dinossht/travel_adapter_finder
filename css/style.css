@@ -216,17 +216,27 @@ section {
 }
 
 .affiliate-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--secondary-color);
-    color: white;
-    border-radius: 5px;
-    transition: background 0.3s;
+    display: inline-block !important;
+    padding: 10px 20px !important;
+    background-color: var(--secondary-color, #34a853) !important;
+    color: white !important;
+    border-radius: 5px !important;
+    transition: background 0.3s !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    min-width: 120px !important;
+    text-align: center !important;
+    border: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 10 !important;
 }
 
 .affiliate-link:hover {
-    background-color: var(--success-color);
-    text-decoration: none;
+    background-color: var(--success-color, #2d8a47) !important;
+    text-decoration: none !important;
+    color: white !important;
 }
 
 /* Footer */

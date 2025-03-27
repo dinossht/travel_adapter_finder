@@ -89,6 +89,12 @@ header h1 {
     font-style: italic;
 }
 
+.version {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+}
+
 /* Navigation */
 nav {
     background-color: var(--dark-color);
@@ -151,6 +157,14 @@ section {
 .cta-button {
     margin: 30px 0;
     text-align: center;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button .button {
+    min-width: 200px;
 }
 
 /* How It Works Section */

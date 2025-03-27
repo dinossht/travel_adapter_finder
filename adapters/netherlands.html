@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Adapters for Netherlands - Travel Adapter Guide</title>
+    <meta name="description" content="Find the right travel adapter for trips from the Netherlands to different countries.">
+    <script type="text/javascript">
+    var _iub = _iub || [];
+    _iub.csConfiguration = {
+        "siteId":3973201,
+        "cookiePolicyId":90621878,
+        "lang":"en",
+        "countryDetection": true,
+        "perPurposeConsent": true,
+        "consentOnContinuedBrowsing": false,
+        "banner": {
+            "acceptButtonDisplay": true,
+            "customizeButtonDisplay": true,
+            "position": "float-bottom-center",
+            "rejectButtonDisplay": true
+        },
+        "storage":{"useSiteId":true}
+    };
+    </script>
+    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3973201.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/plug-types.js"></script>
+    <script src="../js/plug-display.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BQ314XBQ6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1BQ314XBQ6');
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Travel Adapter Guide</h1>
+            <p class="tagline">Find the right adapter for your journey!</p>
+            <p class="version">Version 1.0.0</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="netherlands.html" class="active">Netherlands</a></li>
+                <!-- More countries will be added here later -->
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="country-info">
+                <h2>Travel Adapters for the Netherlands</h2>
+                <p>The Netherlands uses Type F (Schuko) sockets. Here you'll find the adapters you need when traveling from the Netherlands to other countries.</p>
+                
+                <div class="adapter-type">
+                    <h3>Netherlands Standard (Type F)</h3>
+                    <div class="adapter-image" id="netherlands-standard-plug">
+                        <!-- Will be dynamically populated with SVG -->
+                    </div>
+                    <p>The Netherlands uses Type F (Schuko) sockets with 230V and 50Hz. The socket has two round pins with two grounding clips on the sides.</p>
+                </div>
+            </section>
+
+            <section class="popular-destinations">
+                <h3>Popular Destinations from the Netherlands</h3>
+                
+                <div class="destination-card">
+                    <h4>USA and Canada</h4>
+                    <div class="adapter-image" id="usa-plug">
+                        <!-- Will be dynamically populated with plug SVG -->
+                    </div>
+                    <p>For travels to the USA and Canada, you'll need a Type A/B adapter. These countries use 120V, so check if your devices support this voltage.</p>
+                    <div class="buy-section">
+                        <h5>Buy Type A/B adapter</h5>
+                        <div class="affiliate-links">
+                            <a href="https://www.amazon.nl/s?k=us+travel+adapter&tag=dinossht0e-21" class="affiliate-link" target="_blank">Amazon</a>
+                            <a href="https://www.bol.com/nl/nl/s/travel+adapter/" class="affiliate-link" target="_blank">Bol.com</a>
+                            <a href="https://www.coolblue.nl/travel-adapter" class="affiliate-link" target="_blank">Coolblue</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="universal-adapter">
+                <h3>Recommended Universal Travel Adapter</h3>
+                <div class="adapter-image" id="universal-plug">
+                    <!-- Will be dynamically populated -->
+                </div>
+                <p>A universal travel adapter works in over 150 countries and is the perfect choice for global travelers. With built-in USB ports and safety features, it's a must-have for all adventurers.</p>
+                <div class="buy-section">
+                    <h5>Buy Universal Travel Adapter</h5>
+                    <div class="affiliate-links">
+                        <a href="https://www.amazon.nl/s?k=universal+travel+adapter&tag=dinossht0e-21" class="affiliate-link" target="_blank">Buy on Amazon</a>
+                        <a href="https://www.bol.com/nl/nl/s/universal+travel+adapter/" class="affiliate-link" target="_blank">Buy on Bol.com</a>
+                        <a href="https://www.coolblue.nl/universal-travel-adapter" class="affiliate-link" target="_blank">Buy on Coolblue</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Travel Adapter Guide. All rights reserved.</p>
+            <p class="disclaimer">This website contains affiliate links. We may receive a small commission for purchases made through our links, at no extra cost to you.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Display Netherlands standard plug (Type F)
+            const netherlandsStandardPlugDisplay = new PlugDisplay();
+            const netherlandsStandardContainer = document.getElementById('netherlands-standard-plug');
+            netherlandsStandardContainer.appendChild(netherlandsStandardPlugDisplay.getContainer());
+            netherlandsStandardPlugDisplay.plugContainer.innerHTML = `
+                <div class="plug-item">
+                    <div class="plug-svg">
+                        ${netherlandsStandardPlugDisplay.generatePlugSVG('F')}
+                    </div>
+                </div>
+            `;
+            
+            // Display USA plugs
+            const usaPlugDisplay = new PlugDisplay();
+            const usaPlugContainer = document.getElementById('usa-plug');
+            usaPlugContainer.appendChild(usaPlugDisplay.getContainer());
+            usaPlugDisplay.displayPlugsForCountry('usa');
+            
+            // Display universal adapter
+            const universalPlugDisplay = new PlugDisplay();
+            const universalPlugContainer = document.getElementById('universal-plug');
+            universalPlugContainer.appendChild(universalPlugDisplay.getContainer());
+            universalPlugDisplay.displayUniversalAdapter();
+        });
+    </script>
+</body>
+</html> 
